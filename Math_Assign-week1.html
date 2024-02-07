@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math_functions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+
+    input {
+      padding: 5px;
+      margin: 5px;
+    }
+
+    button {
+      padding: 8px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+
+<h3 style ="color: brown; text-decoration: underline;">Insert number and click on the buttons below to find the result</h3>
+
+<label for="numberInput">Enter a number:</label>
+<input type="number" id="numberInput" placeholder="Type a number">
+
+<button onclick="displaySquare()">1. Find Square</button>
+<button onclick="convertToCelsius()">2. Convert to Fahrenheit</button>
+<button onclick="calculateCircleValues()">3. Circle Values</button>
+<button onclick="calculateSimpleInterest()">4. Simple Interest</button>
+<button onclick="calculateRectangleArea()">5. Rectangle Area</button>
+
+<div id="result"></div>
+  <h5>6. What are the two possible values of the Boolean data type?
+</h5> 
+  <h4 style = "color: brown;">true And false</h4>
+<script>
+  // Function 1: Returns the square of a number
+  function findSquare() {
+    var number = parseFloat(document.getElementById('numberInput').value);
+    return number * number;
+  }
+
+  // Function 2: Converts Celsius to Fahrenheit
+  function calFahrenheit() {
+    var celsius = parseFloat(document.getElementById('numberInput').value);
+    return (celsius * 9/5) + 32;
+  }
+
+  // Function 3: Finds the area and perimeter of a Circle
+  function circleValues() {
+    var radius = parseFloat(document.getElementById('numberInput').value);
+    var perimeter = 2 * Math.PI * radius;
+    var area = Math.PI * radius * radius;
+    return { perimeter: perimeter, area: area };
+  }
+
+  // Function 4: Calculates simple interest
+  function simpleInt() {
+    var principal = parseFloat(document.getElementById('numberInput').value);
+    var rate = 5; // Example rate of interest
+    var time = 2; // Example time in years
+    return (principal * rate * time) / 100;
+  }
+
+  // Function 5: Finds the area of a Rectangle
+  function rectangleArea() {
+    var width = parseFloat(document.getElementById('numberInput').value);
+    var height = 8; // Example height
+    return width * height;
+  }
+
+  // Display the result on the page
+  function displayResult(result) {
+    document.getElementById('result').innerHTML = 'Result: ' + result;
+  }
+
+  // Button click events
+  function displaySquare() {
+    var result = findSquare();
+    displayResult(result);
+  }
+
+  function convertToCelsius() {
+    var result = calFahrenheit();
+    displayResult(result);
+  }
+
+  function calculateCircleValues() {
+    var result = circleValues();
+    displayResult('Perimeter: ' + result.perimeter + ', Area: ' + result.area);
+  }
+
+  function calculateSimpleInterest() {
+    var result = simpleInt();
+    displayResult(result);
+  }
+
+  function calculateRectangleArea() {
+    var result = rectangleArea();
+    displayResult(result);
+  }
+</script>
+
+</body>
+</html>
